@@ -1,0 +1,59 @@
+name: CI
+
+on:
+
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build1:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+
+      - name: set
+        run: sudo apt install cmake rpm g++
+      
+      - name: build-linux
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          cpack -G DEB
+          cpack -G RPM
+          cpack -G TGZ
+  build2:
+    
+    runs-on: windows-latest
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: build-win
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          cmake --build . --config Release
+          cpack -C Release
+          cpack -G NSIS64
+          
+  build3:
+    
+    runs-on: macos-latest
+    steps:
+        - uses: actions/checkout@v3
+        - name: build-mac
+          run: |
+            mkdir build
+            cd build
+            cmake ..
+            cmake --build .
+            cpack -G DragNDrop
