@@ -15,7 +15,7 @@ file(GLOB_RECURSE INCLUDES *.h)
 
 
 
-target_link_libraries(${PROJECT_NAME} solver_lib formatter_ex_lib)
+target_link_libraries(${PROJECT_NAME} solver_lib formatter_ex)
 
 install(FILES ${SOURCES} DESTINATION src)
 install(FILES ${INCLUDES} DESTINATION inc)
