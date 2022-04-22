@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 project(solver_mega)
 
-add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/solver_application/solve_application_.cpp)
+add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/solver_application/equation.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/solver_lib
                                                   ${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex_lib)
