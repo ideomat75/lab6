@@ -7,7 +7,7 @@ add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/solver_app/solve_app_
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/solver_lib
                                                   ${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex formatter_ex)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex_lib formatter_ex_lib)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/solver_lib solver)
 
 file(GLOB_RECURSE SOURCES  *_.cpp)
