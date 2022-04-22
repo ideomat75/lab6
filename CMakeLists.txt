@@ -12,7 +12,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/solver_lib solver)
 
 file(GLOB_RECURSE SOURCES  *_.cpp)
 file(GLOB_RECURSE INCLUDES *.h)
-file(GLOB_RECURSE LIBS lib*.a)
+
 
 
 target_link_libraries(${PROJECT_NAME} solver_lib formatter_ex_lib)
