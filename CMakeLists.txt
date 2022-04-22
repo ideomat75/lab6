@@ -20,9 +20,7 @@ target_link_libraries(${PROJECT_NAME} solver formatter_ex)
 install(FILES ${SOURCES} DESTINATION src)
 install(FILES ${INCLUDES} DESTINATION inc)
 
-install(TARGETS formatter DESTINATION lib)
-install(TARGETS formatter_ex DESTINATION lib)
-install(TARGETS solver DESTINATION lib)
+
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "SOLVER")
