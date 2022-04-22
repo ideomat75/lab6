@@ -28,6 +28,26 @@ jobs:
           cpack -G DEB
           cpack -G RPM
           cpack -G TGZ
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload-Release-Asset
+        id: upload-release-asset1-rpm
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: solver_mega-0.1.1-Linux.rpm
+          asset_name: solve.rpm
+          asset_content_type: application/rpm
   build2:
     
     runs-on: windows-latest
