@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.0)
 
 project(solver_mega)
 
-add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/solver_app/solve_app_.cpp)
+add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/solver_application/solve_application_.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/solver_lib
-                                                  ${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex)
+                                                  ${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex_lib)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex_lib formatter_ex_lib)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/solver_lib solver)
@@ -15,7 +15,7 @@ file(GLOB_RECURSE INCLUDES *.h)
 file(GLOB_RECURSE LIBS lib*.a)
 
 
-target_link_libraries(${PROJECT_NAME} solver formatter_ex)
+target_link_libraries(${PROJECT_NAME} solver_lib formatter_ex_lib)
 
 install(FILES ${SOURCES} DESTINATION src)
 install(FILES ${INCLUDES} DESTINATION inc)
