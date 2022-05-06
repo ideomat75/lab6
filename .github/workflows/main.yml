@@ -72,9 +72,7 @@ jobs:
      
     runs-on: windows-latest
     steps:
-
       - uses: actions/checkout@v3
-
       - name: build-win
         run: |
           mkdir build
@@ -84,11 +82,10 @@ jobs:
           cmake --build . --config Release
           cpack -C Release
           cpack -G NSIS64
-          - uses: actions/upload-artifact@v3
-          
-            with:
-              name: mac-art
-              path:  D:/a/lab6/lab6/build/solver_mega-0.1.1-win64.exe
+      - uses: actions/upload-artifact@v3
+        with:
+           name: mac-art
+           path:  D:/a/lab6/lab6/build/solver_mega-0.1.1-win64.exe
 
 
           
