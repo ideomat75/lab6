@@ -98,4 +98,9 @@ jobs:
             cmake ..
             cmake --build .
             cpack -G DragNDrop
+            - uses: actions/upload-artifact@v3
+        - uses: actions/upload-artifact@v3
+          with:
+            name: mac-art
+            path: /Users/runner/work/lab06/lab06/build/solver_mega-0.1.1-Darwin.dmg
 
