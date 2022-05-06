@@ -86,9 +86,9 @@ jobs:
           cpack -G NSIS64
           - uses: actions/upload-artifact@v3
           
-              with:
-                name: mac-art
-                path:  D:/a/lab6/lab6/build/solver_mega-0.1.1-win64.exe
+            with:
+              name: mac-art
+              path:  D:/a/lab6/lab6/build/solver_mega-0.1.1-win64.exe
 
 
           
